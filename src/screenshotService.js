@@ -2,7 +2,7 @@ import { BrowserWindow } from 'electron'
 import fs from 'fs'
 import * as utils from './utils'
 
-export function createWindow ({ dimensions } = { dimensions: { width: 1024, height: 768 }}) {
+export function createWindow ({ dimensions } = { dimensions: { width: 1024, height: 768 } }) {
   return new BrowserWindow({
     x: 0,
     y: 0,
