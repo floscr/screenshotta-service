@@ -6,6 +6,6 @@
   },
   "rules": {
     "padded-blocks": 0,
-    "comma-dangle": 0,
+    "comma-dangle": 0
   }
 }
