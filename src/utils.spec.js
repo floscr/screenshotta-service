@@ -1,5 +1,11 @@
-import { expect } from 'chai'
+/* eslint-disable no-unused-expressions */
+import chai from 'chai'
+import expectToBeAPromise from 'expect-to-be-a-promise'
+
 import * as util from './utils.js'
+
+chai.use(expectToBeAPromise)
+const { expect } = chai
 
 describe('utils', () => {
   it('remove http/https from url', () => {
@@ -20,4 +26,9 @@ describe('utils', () => {
     expect(util.sanitizeUrl('https://www.my.special.url.com/with/subroutes'))
       .to.equal('my-special-url-com-with-subroutes')
   })
+
+  it('expects promise', () => {
+    expect(util.wait(0)).to.be.a.promise
+  })
+
 })

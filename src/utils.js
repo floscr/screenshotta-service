@@ -21,7 +21,7 @@ export function sanitizeUrl (url) {
 }
 
 export function wait (timeout) {
-  return Promise((resolve, reject) => {
-    setTimeout(resolve, timeout)
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve(), timeout)
   })
 }
