@@ -9,7 +9,7 @@ export function removeWWWFromURL (url) {
 }
 
 export function replaceSpecialCharactersWith (url, replacement = '-') {
-  return url.replace(/[^a-zA-Z0-9]/g, replacement);
+  return url.replace(/[^a-zA-Z0-9]/g, replacement)
 }
 
 export function sanitizeUrl (url) {
