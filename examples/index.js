@@ -1,5 +1,5 @@
-var ex1 = require('./example1');
+import singleScreenshot from './singleScreenshot'
 
-module.exports ={
-  ex1: ex1,
-};
+export default {
+  singleScreenshot,
+}
