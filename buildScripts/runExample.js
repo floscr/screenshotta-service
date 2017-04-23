@@ -32,7 +32,7 @@ function run (command, color, name) {
      */
     if (/Compiled/g.test(data.toString().trim().replace(/\n/g, '\n' + repeat(' ', command.length + 2))) && !isElectronOpen) {
       console.log(`${BLUE}Starting electron...\n${END}`)
-      run('cross-env NODE_ENV=development electron examples/index.js', BLUE, 'electron')
+      run('cross-env NODE_ENV=development electron dist/main.js', BLUE, 'electron')
       isElectronOpen = true
     }
   })
@@ -50,4 +50,4 @@ function exit (code) {
 }
 
 console.log(`${YELLOW}Starting webpack-dev-server...\n${END}`)
-run(`webpack-dev-server --colors --config webpack.config.js --port 1337 --content-base dist`, YELLOW, 'webpack')
+run(`webpack-dev-server --hot --colors --config webpack.config.js --port 1337 --content-base dist`, YELLOW, 'webpack')

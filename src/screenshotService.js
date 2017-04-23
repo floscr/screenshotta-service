@@ -2,6 +2,8 @@ import { BrowserWindow } from 'electron'
 import fs from 'fs'
 import * as utils from './utils'
 
+import  debug from 'electron-debug'
+
 export function createWindow ({ dimensions } = { dimensions: { width: 1024, height: 768 } }) {
   return new BrowserWindow({
     x: 0,
@@ -61,6 +63,7 @@ export function makeScreenshot ({ url, width, height, delay }, win) {
 export function makeScreenshots (routes, delay = 0) {
   const win = createWindow()
   const routePromises = routes.map(route => makeScreenshot(route, win))
+  console.log(routePromises)
   return Promise
     .all(routePromises)
     .then(() => cleanupWindow(window))

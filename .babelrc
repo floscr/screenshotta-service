@@ -1,4 +1,6 @@
 {
+  "comments": false,
+  "presets": ["es2015", "stage-0"],
   "env": {
     "main": {
       "presets": ["es2015", "stage-0"]
