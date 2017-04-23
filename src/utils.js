@@ -20,8 +20,8 @@ export function sanitizeUrl (url) {
   )(url)
 }
 
-export function wait (timeout) {
+export function wait (duration) {
   return new Promise((resolve, reject) => {
-    setTimeout(resolve(), timeout)
+    setTimeout(resolve(), duration)
   })
 }
