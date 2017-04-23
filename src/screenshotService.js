@@ -24,8 +24,8 @@ export function createWindow ({ dimensions } = { dimensions: { width: 1024, heig
 
 export function setWindowProps ({ url, width, height }, win) {
   return Promise((resolve, reject) => {
-    win.setSize(1024, 768)
     win.loadURL(url)
+    win.setSize(width, height)
     win.on('page-title-updated', resolve())
   })
 }
@@ -58,7 +58,7 @@ export function makeScreenshot ({ url, width, height, delay }, win) {
   })
 }
 
-export default function makeScreenshots (routes, delay = 0) {
+export function makeScreenshots (routes, delay = 0) {
   const win = createWindow()
   const routePromises = routes.map(route => makeScreenshot(route, win))
   return Promise
