@@ -7,7 +7,7 @@
     "clean": "rimraf lib",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "test:examples": "node examples/",
+    "test:examples": "electron examples/",
     "cover": "cross-env BABEL_ENV=commonjs istanbul cover _mocha -- 'src/**/*.spec.js' --compilers js:babel-register --recursive",
     "lint": "eslint src",
     "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
@@ -23,6 +23,9 @@
   ],
   "author": "Florian Schrödl <hello@florianschroedl.com>",
   "license": "MIT",
+  "dependencies": {
+    "electron": "^1.6.5"
+  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
@@ -48,10 +51,8 @@
     "jest": "^19.0.2",
     "mocha": "^3.0.2",
     "regenerator-runtime": "^0.10.3",
-    "rimraf": "^2.5.4"
-  },
-  "dependencies": {
-    "electron": "^1.6.5",
-    "eslint-config-standard": "^10.2.1"
+    "rimraf": "^2.5.4",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
   }
 }
