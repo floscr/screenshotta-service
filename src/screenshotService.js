@@ -50,7 +50,7 @@ export function cleanupWindow (win) {
 }
 
 export function makeScreenshot ({ url, width, height, delay }, win) {
-  return Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     await setWindowProps({ url, width, height }, win)
     await utils.wait(delay)
     const filename = utils.fileNameFromURL(url)
